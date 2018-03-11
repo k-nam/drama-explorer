@@ -1,0 +1,42 @@
+<%= form_with(model: @actor, local: true) do |form| %>
+
+<div class="row">	
+	<% if @actor.errors.any? %>
+		<div id="error_explanation">
+			<h2>
+				<%= pluralize(@actor.errors.count, "error") %> 
+					prohibited this season from being saved:
+			</h2>
+			<ul>
+				<% @actor.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>	
+</div>  
+<div class="row">
+	<div class="col">
+		<table class="table">
+			<tr>
+				<td><%= form.label '名前' %></td>
+				<td><%= form.text_field :name %></td>
+			</tr>
+			<tr>
+				<td><%= form.label 'イメージURL' %></td>
+				<td><%= form.text_field :img_url %></td>
+			</tr>
+		</table>
+	</div>
+</div>
+<div class="row">
+	<div class="col">
+		<input type="submit" class="btn btn-warning" value="このデータで登録する">
+	</div>
+</div>
+<div class="row" style="margin-top:1em">
+	<div class="col">
+		<button type="button" class="btn btn-info"  onclick="location.assign('<%= actors_path %>')">戻る</button>
+	</div>
+</div>
+<% end %>
