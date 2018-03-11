@@ -1,2 +1,2 @@
 # rails-drama
-Content-based website buit with Rails and Bootstrap
+Prototype content service website with Rails and Bootstrap
