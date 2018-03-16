@@ -15,7 +15,7 @@
  */
 
 $grid-columns:               12 !default;
-$grid-gutter-width:          1vw !default;
+$grid-gutter-width:          1.5vw !default;
 
 @import "bootstrap";
  
@@ -30,6 +30,10 @@ body {
 
 h1 {
 	padding: 2vmax 0px;
+}
+
+p {
+  margin-bottom: 2px;
 }
 
 img {

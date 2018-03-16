@@ -27,16 +27,16 @@ $(document).ready(function() {
 </div>
 
 <div class="row">
-	<div class="col-12 col-lg-6">  
+	<div class="col-12 col-lg-6 drama-show-row">  
 		<img src="<%= @drama.img_url %>" style="width:100%;"> 
 	</div>
-	<div class="col-12 col-lg-6">  
+	<div class="col-12 col-lg-6 drama-show-row">  
 		<p><%= @drama.start_date.to_s%></p>
 		<p><%= @drama.synopsis %></p>
 	</div>
 </div> 
 
-<div class="row justify-content-start" style="padding-bottom:0px;">
+<div class="row drama-show-row justify-content-start" style="padding-bottom:0px;">
 	<% @drama.actors.each do |actor| %>
 		<div class="col-3 col-lg-2">	
 				<p><a href="<%= actor_path(actor)%>" ><img class="img-actor" style="width:100%;"src="<%= actor.img_url %>"></a><br>
