@@ -15,7 +15,6 @@ development:
   #database: db/development.sqlite3
   database: rails_drama
   encoding: utf8
-  database: rails_drama
   username: calvin
   password: calvin1729
   host: calvin-postgre.cytzyor3ndjk.ap-northeast-2.rds.amazonaws.com
