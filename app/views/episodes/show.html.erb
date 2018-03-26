@@ -1,0 +1,15 @@
+<div id="main-container" class="container" style="margin-top:2%">
+<div class="row">
+	<div class="col">
+        <h4><%= @episode.season.drama.title + " Season " + @episode.season.season_num.to_s %></h4>
+        <h4><%= "第 " + @episode.episode_num.to_s + "話" %></h4>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col">
+        <video id="episode-video" style="width:100%;" src="<%= @episode.filename %>" controls autoplay></video>
+	</div>
+</div>
+
+</div>

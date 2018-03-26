@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  season_num: 1
+  num_total_episode: 1
+  director: MyString
+  actor: MyString
+  synopsis: MyString
+  start_date: 2018-03-01
+
+two:
+  title: MyString
+  season_num: 1
+  num_total_episode: 1
+  director: MyString
+  actor: MyString
+  synopsis: MyString
+  start_date: 2018-03-01

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  episode_num: 1
+  duration: 2018-03-03 02:13:26
+  date: 2018-03-03
+  synopsis: MyString
+  season: one
+
+two:
+  episode_num: 1
+  duration: 2018-03-03 02:13:26
+  date: 2018-03-03
+  synopsis: MyString
+  season: two
