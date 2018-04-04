@@ -3,7 +3,9 @@ class Drama < ApplicationRecord
 	has_many :participations, dependent: :destroy
 	has_many :actors, through: :participations
 
-	validates :title, presence: true
+	validates :title, presence: true, uniqueness: { message: 'Duplicate drama title' }
+	validates :eng_title, presence: true, uniqueness: { message: 'Duplicate drama eng_title' }
+
 
 	def num_total_season
 		self.seasons.length
@@ -20,4 +22,5 @@ class Drama < ApplicationRecord
 			end
 		end
 	end
+
 end

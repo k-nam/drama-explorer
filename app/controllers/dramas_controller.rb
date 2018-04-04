@@ -46,7 +46,7 @@ class DramasController < ApplicationController
 	private
 		def drama_params
 			params.require(:drama).permit(
-				:title, :img_url, :type, :genre, :director, :actor,
+				:title, :eng_title, :img_url, :type, :genre, :director, :actor,
 				:start_date, :synopsis)
 		end
 end

@@ -1,5 +1,6 @@
-<script> 
+<!-- actors show -->
 
+<script> 
 $(document).ready(function() {   
 	set_image_aspect_ratio("img-actor", 1.3);
     set_image_aspect_ratio("img-drama", 0.7);
@@ -23,7 +24,7 @@ $(document).ready(function() {
 
 <div class="row"style="margin-bottom:30px">
 	<div class="col-6 col-lg-3">            
-		<img class="img-actor" style="width:100%;"src="<%= @actor.img_url %>">		
+		<img class="img-actor" style="width:100%;"src="<%= image_url(@actor.eng_name) %>">		
 	</div>
 	<div class="col-6 col-lg-9">		
 		<%= @actor.name %>	
@@ -33,7 +34,8 @@ $(document).ready(function() {
 <% @actor.dramas.each do |drama| %>
     <div class="row"style="margin-bottom:30px">
         <div class="col-4 col-lg-2">	
-            <p><a href="<%= drama_path(drama) %>"><img class="img-drama" style="width:100%;"src="<%= drama.img_url %>"></a>
+            <p><a href="<%= drama_path(drama) %>">
+            <img class="img-drama" style="width:100%;"src="<%= image_url(drama.eng_title) %>"></a>
             </p>
         </div>
         <div class="col-8 col-lg-8">	
@@ -44,7 +46,7 @@ $(document).ready(function() {
     </div>
 <% end %>
 
-<% if request.host_with_port == admin_url %>
+<% if is_admin %>
     <div class="row" style="margin-top:1em">
         <div class="col">
             <%= link_to '修正', edit_actor_path(@actor) %>
