@@ -10,14 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180310061051) do
+ActiveRecord::Schema.define(version: 20180407010054) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "actors", id: :serial, force: :cascade do |t|
     t.text "name"
-    t.text "img_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.date "birthdate"
@@ -26,6 +25,11 @@ ActiveRecord::Schema.define(version: 20180310061051) do
     t.text "company"
     t.decimal "height"
     t.text "filmography"
+    t.string "blood"
+    t.string "weight"
+    t.string "eng_name"
+    t.index ["eng_name"], name: "index_actors_on_eng_name", unique: true
+    t.index ["name"], name: "index_actors_on_name", unique: true
   end
 
   create_table "dramas", id: :serial, force: :cascade do |t|
@@ -38,7 +42,9 @@ ActiveRecord::Schema.define(version: 20180310061051) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "synopsis"
-    t.text "img_url"
+    t.string "eng_title"
+    t.index ["eng_title"], name: "index_dramas_on_eng_title", unique: true
+    t.index ["title"], name: "index_dramas_on_title", unique: true
   end
 
   create_table "episodes", id: :serial, force: :cascade do |t|
@@ -77,6 +83,8 @@ ActiveRecord::Schema.define(version: 20180310061051) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "episodes", "seasons"
   add_foreign_key "participations", "actors", name: "participations_actor_id_fkey"
   add_foreign_key "participations", "dramas", name: "participations_drama_id_fkey"
+  add_foreign_key "seasons", "dramas"
 end
