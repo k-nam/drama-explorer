@@ -31,5 +31,13 @@ module ApplicationHelper
     
     def video_url (path)
 		signed_url_for(s3_video_url + path + '.mp4')
-	end
+    end
+    
+    def video_file_path(episode)
+        # drama/season/episode_num
+        season = Season.find(episode.season_id)
+        drama = Drama.find(season.drama_id)
+        path = drama.eng_title + '/' + format('%02d', season.season_num) + '/' + format('%02d', episode.episode_num)
+        return video_url(path)
+    end
 end

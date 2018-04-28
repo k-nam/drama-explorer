@@ -78,6 +78,7 @@ $(document).ready(function() {
 					<% season.episodes.sort.each do |episode| %>						
 						<button type="button" class="btn" style="margin: 5px"
 							onclick="location.assign('<%= episode_path(episode) %>')"><%= episode.episode_num %>話</button>
+							
 						<!-- <td><%= link_to '修正', edit_episode_path(episode) %>
 						<%= link_to '削除', episode_path(episode), method: :delete, 
 								data: { confirm: '削除しますか？' } %></td> -->					

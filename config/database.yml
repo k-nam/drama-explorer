@@ -16,7 +16,7 @@ development:
   database: rails_drama
   encoding: utf8
   username: calvin
-  password: calvin1729
+  password: <%= begin IO.read("/home/ubuntu/git/db_password") rescue "" end %>
   host: calvin-postgre.cytzyor3ndjk.ap-northeast-2.rds.amazonaws.com
   port: 5432 
 
