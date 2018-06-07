@@ -27,24 +27,22 @@ $(document).ready(function() {
 		<img class="img-actor" style="width:100%;"src="<%= image_url(@actor.eng_name) %>">		
 	</div>
 	<div class="col-xs-6 col-lg-9">		
-		<%= @actor.name %>	
+		<h2><%= @actor.name %></h2>
 	</div>
 </div>
 
-<% @actor.dramas.each do |drama| %>
-    <div class="row"style="margin-bottom:30px">
-        <div class="col-xs-4 col-lg-2">	
-            <p><a href="<%= drama_path(drama) %>">
-            <img class="img-drama" style="width:100%;"src="<%= image_url(drama.eng_title) %>"></a>
-            </p>
-        </div>
-        <div class="col-xs-8 col-lg-8">	
-            <p><%= drama.title %>
 
-            </p>
+<div class="row"style="margin-bottom:30px">
+    <% @actor.dramas.each do |drama| %>
+        <div class="col-xs-4 col-lg-2">	
+            <div><a href="<%= drama_path(drama) %>">
+            <img class="img-drama" style="width:100%;"src="<%= image_url(drama.eng_title) %>"></a>
+            </div>
+            <div style="height: 1.1em; overflow:hidden"><strong><%= drama.title %></strong></div>
         </div>
-    </div>
-<% end %>
+    <% end %>
+</div>
+
 
 <% if is_admin %>
     <div class="row" style="margin-top:1em">

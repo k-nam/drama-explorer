@@ -33,6 +33,7 @@ $(document).ready(function() {
 		<img src="<%= image_url(@drama.eng_title) %>" style="width:100%;"> 
 	</div>
 	<div class="col-xs-12 col-lg-6">  
+		<h2><%= @drama.title %></h2>
 		<p><%= @drama.start_date.to_s%></p>
 		<p><%= @drama.synopsis %></p>
 	</div>

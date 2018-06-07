@@ -23,14 +23,18 @@ $(document).ready(function() {
     <div class="row justify-content-start" style="margin-bottom:30px">
         <% @actors.each do |actor| %>   
             <div class="col-xs-3 col-lg-2">
-                <p><a href="<%= actor_path(actor)%>">
-                    <img class="img-actor" style="width:100%;" src="<%= image_url(actor.eng_name) %>"></a><br>
-                <strong><%= actor.name %></strong>
+                <div><a href="<%= actor_path(actor)%>">
+                    <img class="img-actor" style="width:100%;" src="<%= image_url(actor.eng_name) %>"></a>
+                </div>
+                <div style="height: 1.1em; overflow:hidden"><strong><%= actor.name %></strong></div>
+                <div>
                 <% if is_admin %>
                     <%= link_to '修正', edit_actor_path(actor) %>
                     <%= link_to '削除', actor_path(actor), method: :delete, 
                         data: { confirm: '削除しますか？' } %>
-                <% end %></p>
+                <% end %>
+                </div>
+                <div style="height: 1.1em"></div>
             </div>
         <% end %>
     </div>
