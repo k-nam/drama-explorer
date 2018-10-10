@@ -22,7 +22,7 @@
                 options_for_select(Drama.all.map{|s|[s.title, s.id]}, @drama.id) %>
         </div>
         <div class="col-3">	
-            <%= form.label 'Actor ' %><br><%= form.select :actor_id, options_for_select(Actor.all.map{|s|[s.name, s.id]}) %>
+            <%= form.label 'Actor ' %><br><%= form.select :actor_id, options_for_select(Actor.all.sort_by { |x| x.name }.map{|s|[s.name, s.id]}) %>
         </div>
     </div>
     <div class="row">	

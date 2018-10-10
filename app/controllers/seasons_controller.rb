@@ -15,8 +15,7 @@ class SeasonsController < ApplicationController
 		@season = @drama.seasons.build(season_params)
 		
 		1.upto(season_params[:num_total_episode].to_i) do |num|
-			episode_params = { episode_num: num, 
-				filename: season_params[:url_prefix] + num.to_s.rjust(2, '0') + '.mp4' }
+			episode_params = { episode_num: num }
 			episode = @season.episodes.build(episode_params)
 		end
 
@@ -50,6 +49,6 @@ class SeasonsController < ApplicationController
 		def season_params
 			params.require(:season).permit(
 				:season_num, :director, :actor,
-				:start_date, :synopsis, :url_prefix, :num_total_episode)
+				:start_date, :synopsis, :file_extension, :num_total_episode)
 		end
 end

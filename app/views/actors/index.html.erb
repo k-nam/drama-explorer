@@ -21,7 +21,7 @@ $(document).ready(function() {
         </div>
     </div>
     <div class="row justify-content-start" style="margin-bottom:30px">
-        <% @actors.each do |actor| %>   
+        <% @actors.sort_by { |x| x.name } .each do |actor| %>   
             <div class="col-xs-3 col-lg-2">
                 <div><a href="<%= actor_path(actor)%>">
                     <img class="img-actor" style="width:100%;" src="<%= image_url(actor.eng_name) %>"></a>

@@ -28,7 +28,15 @@ $(document).ready(function() {
 	</div>
 	<div class="col-xs-6 col-lg-9">		
 		<h2><%= @actor.name %></h2>
-	</div>
+		<p><strong>生年月日</strong> <%= @actor.birthdate %></p>
+		<p><strong>出身地</strong> <%= @actor.birthplace %></p>
+		<p><strong>身長</strong> <%= @actor.height %></p>
+		<p><strong>体重</strong> <%= @actor.weight %></p>		
+		<p><strong>血液方</strong> <%= @actor.blood %></p>
+		<p><strong>配偶者</strong> <%= @actor.spouse %></p>
+		<p><strong>所属社</strong> <%= @actor.company %></p>
+				
+    </div>
 </div>
 
 

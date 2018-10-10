@@ -33,7 +33,7 @@ $(document).ready(function() {
 	</div>
 </div>
 
-<% @dramas.each do |drama| %>
+<% @dramas.sort_by { |x| x.title } .each do |drama| %>
 <div class="row drama-index-row" >		
 	<div class="col-xs-4 col-lg-2">
 		<img style=" width:100%;cursor: pointer;" class="drama-title drama-thumbnail" 
