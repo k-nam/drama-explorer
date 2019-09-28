@@ -15,8 +15,8 @@ ActiveRecord::Schema.define(version: 20181010114911) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "actors", id: :serial, force: :cascade do |t|
-    t.text "name"
+  create_table "actors", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.date "birthdate"
@@ -32,8 +32,8 @@ ActiveRecord::Schema.define(version: 20181010114911) do
     t.index ["name"], name: "index_actors_on_name", unique: true
   end
 
-  create_table "dramas", id: :serial, force: :cascade do |t|
-    t.text "title"
+  create_table "dramas", force: :cascade do |t|
+    t.string "title"
     t.text "type"
     t.text "genre"
     t.text "director"
@@ -47,43 +47,43 @@ ActiveRecord::Schema.define(version: 20181010114911) do
     t.index ["title"], name: "index_dramas_on_title", unique: true
   end
 
-  create_table "episodes", id: :serial, force: :cascade do |t|
+  create_table "episodes", force: :cascade do |t|
     t.integer "episode_num"
-    t.integer "season_id"
+    t.bigint "season_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["season_id"], name: "index_episodes_on_season_id"
   end
 
-  create_table "participations", id: :serial, force: :cascade do |t|
-    t.integer "drama_id"
-    t.integer "actor_id"
+  create_table "participations", force: :cascade do |t|
+    t.bigint "drama_id"
+    t.bigint "actor_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["actor_id"], name: "index_participations_on_actor_id"
     t.index ["drama_id"], name: "index_participations_on_drama_id"
   end
 
-  create_table "seasons", id: :serial, force: :cascade do |t|
+  create_table "seasons", force: :cascade do |t|
     t.integer "season_num"
     t.date "start_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "drama_id"
+    t.bigint "drama_id"
     t.text "file_extension"
     t.decimal "num_total_episode"
     t.index ["drama_id"], name: "index_seasons_on_drama_id"
   end
 
-  create_table "user_ips", id: :serial, force: :cascade do |t|
+  create_table "user_ips", force: :cascade do |t|
     t.text "ip"
     t.decimal "num_total_view"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "episodes", "seasons"
-  add_foreign_key "participations", "actors", name: "participations_actor_id_fkey"
-  add_foreign_key "participations", "dramas", name: "participations_drama_id_fkey"
-  add_foreign_key "seasons", "dramas"
+  add_foreign_key "episodes", "seasons", name: "episodes_seasons_fkey"
+  add_foreign_key "seasons", "dramas", name: "seasons_dramas_fkey"
+  add_foreign_key "participations", "actors", name: "participations_actors_fkey"
+  add_foreign_key "participations", "dramas", name: "participations_dramas_fkey"
 end

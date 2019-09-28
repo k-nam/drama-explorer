@@ -62,3 +62,6 @@ gem 'bootstrap-sass', '~> 3.3.7'
 gem 'chartjs-ror'
 
 gem 'aws-sdk', '~> 2' 
+
+gem 'mysql2', '< 0.5'
+gem 'yaml_db'
