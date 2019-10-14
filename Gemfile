@@ -57,7 +57,7 @@ gem 'pg'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 
 gem 'jquery-rails'
-gem 'bootstrap-sass', '~> 3.3.7'
+gem 'bootstrap-sass', '~> 3.4.1'
 
 gem 'chartjs-ror'
 
@@ -65,3 +65,5 @@ gem 'aws-sdk', '~> 2'
 
 gem 'mysql2', '< 0.5'
 gem 'yaml_db'
+
+gem 'bundler-audit'
