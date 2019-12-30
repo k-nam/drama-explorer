@@ -5,7 +5,7 @@ services:
     build: .
     image: calvincaulfield/drama
     ports:
-      - ${DRAMA_PORT}:${DRAMA_PORT}
+      - 2000:2000
     network_mode: "host"
     restart: always
     environment:
