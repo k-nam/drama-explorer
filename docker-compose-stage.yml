@@ -1,18 +1,14 @@
-version: '3'
+version: "3"
 
 services:
   rails:
     build: .
+    container_name: drama
     image: calvincaulfield/drama
     ports:
-      - 2000:2000
-    network_mode: "host"
+      - 3000:3000
     restart: always
     environment:
       - DB_DATABASE=something
     env_file:
-      - ../.env-production
-    command: bash -c "rm -f /usr/src/app/tmp/pids/server.pid && bundle exec rake assets:precompile RAILS_ENV=production && rails s --binding 0.0.0.0 -p ${DRAMA_PORT}"
-
-
-
+      - env/.env-stage
