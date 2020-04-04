@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>Rakefile - RDoc Documentation</title>
+<title>start_docker.sh - RDoc Documentation</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "./";
@@ -145,13 +145,9 @@
   </div>
 </nav>
 
-<main role="main" aria-label="Page Rakefile">
+<main role="main" aria-label="Page start_docker.sh">
 
-<p># Add your own tasks in files placed in lib/tasks ending in .rake, # for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.</p>
-
-<p>require_relative &#39;config/application&#39;</p>
-
-<p>Rails.application.load_tasks</p>
+<p>rm -f /usr/src/app/tmp/pids/server.pid bundle exec rake assets:precompile RAILS_ENV=production rails s –binding 0.0.0.0 -p ${DRAMA_PORT}</p>
 
 </main>
 
