@@ -1,6 +1,6 @@
-DB_HOST=10.0.1.145
+DB_HOST=drama.rds.internal
 DB_PORT=3306
-DB_USER=stage
+DB_USER=dev
 
 DRAMA_PORT=3000
 
