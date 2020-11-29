@@ -3,11 +3,11 @@ version: "3"
 services:
   rails:
     build: .
+    container_name: drama
     image: calvincaulfield/drama
     ports:
       - 3000:3000
     command: bash -f ./start_docker.sh
-
     network_mode: host
     restart: always
     environment:
