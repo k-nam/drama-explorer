@@ -7,7 +7,7 @@ services:
     image: calvincaulfield/drama
     ports:
       - 3000:3000
-    command: ls -al
+    command: ./start_docker.sh
     # network_mode: host
     restart: always
     environment:
