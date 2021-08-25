@@ -19,4 +19,4 @@ services:
       - DRAMA_PORT
       - SECRET_KEY_BASE
       - RAILS_SERVE_STATIC_FILES
-
+    network_mode: host
